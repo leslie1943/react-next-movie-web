@@ -1,6 +1,5 @@
-import "../styles/globals.css";
-import { ChakraProvider, CSSReset } from "@chakra-ui/react";
-import theme from "@chakra-ui/theme";
+import { ChakraProvider, CSSReset } from '@chakra-ui/react'
+import theme from '@chakra-ui/theme'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       <CSSReset />
       <Component {...pageProps} />
     </ChakraProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
