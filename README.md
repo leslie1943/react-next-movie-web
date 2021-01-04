@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### 1. 创建项目
+` npm init next-app react-next-movie`
+` npm install  @chakra-ui/core`
+` npm install  @chakra-ui/react`
+` npm install  @chakra-ui/theme`
 
-## Getting Started
+### 2. 下载 chakra-ui 框架
+` npm install  @chakra-ui/react`
+安装 `@chakra-ui/react`的依赖包 `yarn add @emotion/react @emotion/styled`
+### 3. 克隆主题
+- 没有克隆主题: 异然使用依赖包的形式 `import theme from "@chakra-ui/theme";`
+### 配置主题
+- 在 `pages` 文件夹下建立` _app.js `加入如下代码
+```js
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
+import theme from "@chakra-ui/theme";
 
-First, run the development server:
+function MyApp({ Component, pageProps }) {
+  return (
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+}
+export default MyApp;
 
-```bash
-npm run dev
-# or
-yarn dev
 ```
+### 下载字体图标
+  npm install react-icons --save
+### 下载 emotion
+  npm install @emotion/core @emotion/styled
+  npm install @emotion/babel-preset-css-prop --save-dev
+### 添加 babel 配置
+  在根目录下创建 .babelrc 文件并添加如下代码
+    {"presets": ["next/babel","@emotion/babel-preset-css-prop"]}
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
