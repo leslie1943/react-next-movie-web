@@ -1,6 +1,10 @@
+## 0. 运行此项目
+- 由于此项目调用了 `3005`端口的`api`
+- 所以需要先下载 服务端项目: [react-next-movie-api](https://github.com/leslie1943/react-next-movie)
+- 安装步骤启动
+
 ### 1. 创建项目
 ` npm init next-app react-next-movie`
-
 
 ### 2. 安装 chakra-ui 框架 及 主题
 - `yarn add  @chakra-ui/core`
